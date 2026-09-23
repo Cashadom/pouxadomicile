@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BioStopPoux Tunisie</title>
+  <meta
+    name="description"
+    content="BioStopPoux Tunisie - Centre de prévention, de traitement et d'élimination des poux à domicile en Tunisie."
+  />
+
+  <style>
+    :root {
+      --red: #e10654;
+      --red-dark: #c10549;
+      --red-soft: #fff1f6;
+
+      --yellow: #f4ef2a;
+      --yellow-soft: #fffde6;
+
+      --black: #090909;
+      --black-2: #151515;
+      --black-3: #232323;
+
+      --white: #ffffff;
+      --text: #2a2a2a;
+      --text-soft: #656565;
+      --border: #ececec;
+
+      --shadow: 0 16px 45px rgba(0, 0, 0, 0.12);
+      --radius: 26px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--white);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1140px, 92%);
+      margin: 0 auto;
+    }
+
+    /* HEADER */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(9, 9, 9, 0.96);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(10px);
+    }
+
+    .nav {
+      min-height: 86px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .logo img {
+      height: 62px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      color: rgba(255,255,255,0.88);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    nav a {
+      transition: 0.2s ease;
+    }
+
+    nav a:hover {
+      color: var(--yellow);
+    }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 18px;
+      background: var(--red);
+      color: var(--white);
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 14px;
+      transition: 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .nav-cta:hover {
+      background: var(--red-dark);
+      transform: translateY(-1px);
+    }
+
+    /* HERO */
+
+    .hero {
+      padding: 78px 0 70px;
+      background:
+        radial-gradient(circle at 10% 18%, rgba(225, 6, 84, 0.07), transparent 30%),
+        radial-gradient(circle at 95% 12%, rgba(244, 239, 42, 0.12), transparent 24%),
+        linear-gradient(180deg, #fff8fb 0%, #ffffff 55%);
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.02fr 0.98fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--yellow-soft);
+      color: var(--black);
+      border: 1px solid rgba(0,0,0,0.06);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      font-size: clamp(42px, 6vw, 68px);
+      line-height: 1.02;
+      letter-spacing: -2px;
+      margin-bottom: 22px;
+      color: var(--black);
+    }
+
+    h1 .accent {
+      color: var(--red);
+    }
+
+    h1 .accent-light {
+      color: #111111;
+    }
+
+    .hero-text {
+      font-size: 18px;
+      color: var(--text-soft);
+      max-width: 620px;
+      margin-bottom: 28px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 0 24px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 700;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--red);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--red-dark);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: white;
+      color: var(--black);
+      border: 1px solid rgba(0,0,0,0.12);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--red);
+      color: var(--red);
+    }
+
+    .trust-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .trust-item {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 8px 13px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.04);
+    }
+
+    .trust-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+
+    .dot-red { background: var(--red); }
+    .dot-yellow { background: #d7c800; }
+    .dot-black { background: var(--black); }
+
+    .hero-picture {
+      position: relative;
+    }
+
+    .hero-picture-main {
+      border-radius: 30px;
+      overflow: hidden;
+      min-height: 500px;
+      background: #f7f7f7;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .hero-picture-main img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+    }
+
+    .certified-card {
+      position: absolute;
+      left: -30px;
+      bottom: 28px;
+      width: 255px;
+      background: white;
+      border-radius: 24px;
+      padding: 22px;
+      box-shadow: 0 15px 45px rgba(0,0,0,0.16);
+      border: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .certified-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: var(--yellow-soft);
+      color: var(--red);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+
+    .certified-card strong {
+      display: block;
+      font-size: 18px;
+      margin-bottom: 6px;
+      color: var(--black);
+    }
+
+    .certified-card p {
+      font-size: 13px;
+      color: var(--text-soft);
+    }
+
+    /* BLACK BAND */
+
+    .certification {
+      padding: 20px 0;
+      background: var(--black);
+      color: white;
+    }
+
+    .certification-inner {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      align-items: center;
+    }
+
+    .cert-feature {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .cert-feature-icon {
+      width: 36px;
+      height: 36px;
+      min-width: 36px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--yellow);
+      font-size: 15px;
+      font-weight: 800;
+    }
+
+    section {
+      padding: 82px 0;
+    }
+
+    .section-head {
+      max-width: 760px;
+      margin-bottom: 44px;
+    }
+
+    .section-head span {
+      display: inline-block;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--red);
+      margin-bottom: 10px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(32px, 4vw, 48px);
+      line-height: 1.1;
+      letter-spacing: -1.4px;
+      margin-bottom: 14px;
+      color: var(--black);
+    }
+
+    .section-head p {
+      font-size: 17px;
+      color: var(--text-soft);
+    }
+
+    /* CARDS */
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid var(--border);
+      border-top: 5px solid var(--red);
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.04);
+    }
+
+    .card:nth-child(2) {
+      border-top-color: #111111;
+    }
+
+    .card:nth-child(3) {
+      border-top-color: #d6c900;
+    }
+
+    .card-number {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      margin-bottom: 18px;
+      background: var(--red-soft);
+      color: var(--red);
+    }
+
+    .card:nth-child(2) .card-number {
+      background: #f3f3f3;
+      color: var(--black);
+    }
+
+    .card:nth-child(3) .card-number {
+      background: var(--yellow-soft);
+      color: #8b7a00;
+    }
+
+    .card h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: var(--black);
+    }
+
+    .card p {
+      color: var(--text-soft);
+      font-size: 15px;
+    }
+
+    /* PHOTO SECTIONS */
+
+    .photo-section {
+      background: #fcfcfc;
+    }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .photo-box {
+      overflow: hidden;
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      background: #f6f6f6;
+      border: 1px solid rgba(0,0,0,0.06);
+      min-height: 450px;
+    }
+
+    .photo-box img {
+      width: 100%;
+      height: 450px;
+      object-fit: cover;
+    }
+
+    .content-label {
+      display: inline-block;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--red);
+      margin-bottom: 10px;
+    }
+
+    .photo-content h2 {
+      font-size: clamp(32px, 4vw, 45px);
+      line-height: 1.1;
+      letter-spacing: -1.4px;
+      margin-bottom: 18px;
+      color: var(--black);
+    }
+
+    .photo-content > p {
+      color: var(--text-soft);
+      font-size: 17px;
+      margin-bottom: 26px;
+    }
+
+    .checks {
+      display: grid;
+      gap: 14px;
+    }
+
+    .check {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .check-dot {
+      width: 25px;
+      height: 25px;
+      min-width: 25px;
+      border-radius: 50%;
+      background: var(--yellow-soft);
+      color: var(--red);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 13px;
+      margin-top: 1px;
+    }
+
+    /* TRAINING */
+
+    .training {
+      background: linear-gradient(135deg, #fff7fb 0%, #fffde8 100%);
+    }
+
+    .training-inner {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .training-content {
+      background: rgba(255,255,255,0.92);
+      border-radius: 28px;
+      padding: 42px;
+      border: 1px solid rgba(0,0,0,0.06);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.04);
+    }
+
+    .training-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--yellow-soft);
+      color: var(--black);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    .training-content h2 {
+      font-size: clamp(31px, 4vw, 44px);
+      line-height: 1.1;
+      letter-spacing: -1.3px;
+      margin-bottom: 18px;
+      color: var(--black);
+    }
+
+    .training-content p {
+      color: var(--text-soft);
+      margin-bottom: 18px;
+    }
+
+    .training-image {
+      overflow: hidden;
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      background: white;
+      border: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .training-image img {
+      width: 100%;
+      height: 470px;
+      object-fit: cover;
+    }
+
+    /* PRECAUTIONS */
+
+    .care-box {
+      background: linear-gradient(135deg, #fff2f7 0%, #fffdf0 100%);
+      border-radius: 28px;
+      padding: 44px;
+      max-width: 940px;
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .care-box h2 {
+      font-size: clamp(31px, 4vw, 42px);
+      line-height: 1.15;
+      margin-bottom: 16px;
+      color: var(--black);
+    }
+
+    .care-box p {
+      color: var(--text-soft);
+      margin-bottom: 16px;
+    }
+
+    .care-box ul {
+      padding-left: 20px;
+      color: var(--text-soft);
+    }
+
+    .care-box li {
+      margin: 8px 0;
+    }
+
+    /* CONTACT BLOCK */
+
+    .location {
+      background: #fafafa;
+    }
+
+    .location-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+
+    .location-card {
+      background: white;
+      border-radius: 24px;
+      padding: 30px;
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.04);
+    }
+
+    .location-card h3 {
+      font-size: 24px;
+      margin-bottom: 12px;
+      color: var(--black);
+    }
+
+    .location-card p {
+      color: var(--text-soft);
+      margin-bottom: 8px;
+    }
+
+    .address-box {
+      background: var(--black);
+      color: white;
+      border-radius: 18px;
+      padding: 20px;
+      margin-top: 12px;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .address-box strong {
+      color: var(--yellow);
+    }
+
+    /* CTA */
+
+    .cta {
+      padding-top: 12px;
+      text-align: center;
+    }
+
+    .cta-inner {
+      background: var(--black);
+      color: white;
+      border-radius: 30px;
+      padding: 60px 30px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-inner::before,
+    .cta-inner::after {
+      content: "";
+      position: absolute;
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+      opacity: 0.08;
+    }
+
+    .cta-inner::before {
+      background: var(--red);
+      left: -80px;
+      top: -100px;
+    }
+
+    .cta-inner::after {
+      background: var(--yellow);
+      right: -90px;
+      bottom: -120px;
+    }
+
+    .cta h2 {
+      position: relative;
+      z-index: 2;
+      font-size: clamp(34px, 4vw, 44px);
+      margin-bottom: 14px;
+    }
+
+    .cta p {
+      position: relative;
+      z-index: 2;
+      max-width: 680px;
+      margin: 0 auto 26px;
+      color: rgba(255,255,255,0.82);
+    }
+
+    .cta .btn {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* FOOTER */
+
+    footer {
+      margin-top: 75px;
+      background: var(--black);
+      color: rgba(255,255,255,0.78);
+      padding: 34px 0;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    .footer-logo img {
+      height: 48px;
+      width: auto;
+    }
+
+    .footer-text strong {
+      color: white;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 950px) {
+      nav {
+        display: none;
+      }
+
+      .hero-grid,
+      .photo-grid,
+      .training-inner,
+      .location-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cards,
+      .certification-inner {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero-picture {
+        margin-top: 10px;
+      }
+
+      .certified-card {
+        left: 16px;
+        bottom: 16px;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .cards,
+      .certification-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        min-height: 72px;
+      }
+
+      .logo img {
+        height: 50px;
+      }
+
+      .nav-cta {
+        font-size: 12px;
+        padding: 0 14px;
+        min-height: 40px;
+      }
+
+      h1 {
+        font-size: 44px;
+      }
+
+      .hero-picture-main,
+      .hero-picture-main img {
+        min-height: 420px;
+        height: 420px;
+      }
+
+      .photo-box,
+      .photo-box img {
+        min-height: 360px;
+        height: 360px;
+      }
+
+      .training-image img {
+        height: 390px;
+      }
+
+      .care-box,
+      .training-content,
+      .location-card {
+        padding: 28px;
+      }
+
+      section {
+        padding: 66px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container nav">
+      <a href="#" class="logo">
+        <img src="logo.png" alt="BioStopPoux Tunisie" />
+      </a>
+
+      <nav>
+        <a href="#methode">La méthode</a>
+        <a href="#traitement">Le traitement</a>
+        <a href="#formation">Notre savoir-faire</a>
+        <a href="#precautions">Précautions</a>
+        <a href="#adresse">Adresse</a>
+      </nav>
+
+      <a href="#contact" class="nav-cta">Prendre rendez-vous</a>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="container hero-grid">
+
+        <div>
+          <div class="eyebrow">✓ Centre de prévention et traitement des poux</div>
+
+          <h1>
+            Dites stop aux <span class="accent">poux</span>,
+            simplement et <span class="accent-light">efficacement</span>.
+          </h1>
+
+          <p class="hero-text">
+            BioStopPoux Tunisie vous accompagne avec une méthode professionnelle
+            développée en France depuis 2017, combinant aspiration mécanique,
+            contrôle minutieux et intervention adaptée à toute la famille.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#contact" class="btn btn-primary">Prendre rendez-vous</a>
+            <a href="#methode" class="btn btn-secondary">Découvrir la méthode</a>
+          </div>
+
+          <div class="trust-row">
+            <div class="trust-item">
+              <span class="trust-dot dot-red"></span>
+              Formation certifiée
+            </div>
+
+            <div class="trust-item">
+              <span class="trust-dot dot-yellow"></span>
+              Méthode naturelle
+            </div>
+
+            <div class="trust-item">
+              <span class="trust-dot dot-black"></span>
+              Intervention à domicile
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-picture">
+          <div class="hero-picture-main">
+            <img src="img1.png" alt="Traitement professionnel des poux à domicile en Tunisie" />
+          </div>
+
+          <div class="certified-card">
+            <div class="certified-icon">✓</div>
+            <strong>Formation certifiée</strong>
+            <p>
+              Une méthode professionnelle développée par Poux à Domicile
+              en France depuis 2017.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="certification">
+      <div class="container certification-inner">
+        <div class="cert-feature">
+          <div class="cert-feature-icon">✓</div>
+          Formation professionnelle
+        </div>
+
+        <div class="cert-feature">
+          <div class="cert-feature-icon">2017</div>
+          Méthode développée en France
+        </div>
+
+        <div class="cert-feature">
+          <div class="cert-feature-icon">♧</div>
+          Traitement éco-naturel
+        </div>
+
+        <div class="cert-feature">
+          <div class="cert-feature-icon">⌂</div>
+          À domicile en Tunisie
+        </div>
+      </div>
+    </div>
+
+    <section id="methode">
+      <div class="container">
+        <div class="section-head">
+          <span>Notre méthode</span>
+          <h2>Une méthode claire, structurée et rassurante</h2>
+          <p>
+            Notre protocole associe diagnostic, aspiration mécanique,
+            contrôle des lentes et intervention adaptée afin de traiter
+            la chevelure de manière méthodique.
+          </p>
+        </div>
+
+        <div class="cards">
+          <div class="card">
+            <div class="card-number">1</div>
+            <h3>Diagnostic</h3>
+            <p>
+              Vérification minutieuse du cuir chevelu et des cheveux
+              afin d'identifier la présence de poux et de lentes.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="card-number">2</div>
+            <h3>Aspiration des poux</h3>
+            <p>
+              Utilisation d'un aspirateur spécialement adapté
+              permettant une action mécanique ciblée.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="card-number">3</div>
+            <h3>Contrôle mèche par mèche</h3>
+            <p>
+              Contrôle rigoureux de la chevelure et conseils pratiques
+              pour réduire le risque de récidive.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="photo-section" id="traitement">
+      <div class="container photo-grid">
+
+        <div class="photo-box">
+          <img src="img2.png" alt="Schéma du traitement des poux" />
+        </div>
+
+        <div class="photo-content">
+          <span class="content-label">Le traitement</span>
+          <h2>Une approche mécanique avant tout</h2>
+          <p>
+            Notre priorité est de traiter les cheveux avec une méthode précise,
+            en privilégiant l’aspiration mécanique et une approche respectueuse
+            du cuir chevelu.
+          </p>
+
+          <div class="checks">
+            <div class="check">
+              <div class="check-dot">✓</div>
+              <div>Aspiration mécanique des poux</div>
+            </div>
+
+            <div class="check">
+              <div class="check-dot">✓</div>
+              <div>Inspection précise du cuir chevelu</div>
+            </div>
+
+            <div class="check">
+              <div class="check-dot">✓</div>
+              <div>Contrôle et retrait minutieux des lentes</div>
+            </div>
+
+            <div class="check">
+              <div class="check-dot">✓</div>
+              <div>Approche douce et éco-naturelle</div>
+            </div>
+
+            <div class="check">
+              <div class="check-dot">✓</div>
+              <div>Conseils pour éviter une nouvelle infestation</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="training" id="formation">
+      <div class="container training-inner">
+
+        <div class="training-content">
+          <div class="training-badge">✓ Formation certifiée</div>
+
+          <h2>Un savoir-faire professionnel transmis depuis la France</h2>
+
+          <p>
+            Notre protocole repose sur une méthode développée en France
+            depuis 2017, adaptée à une intervention à domicile rassurante
+            et professionnelle.
+          </p>
+
+          <p>
+            L'intervention suit différentes étapes : observation du cuir chevelu,
+            aspiration, traitement des cheveux, contrôle des lentes et conseils
+            pratiques destinés à toute la famille.
+          </p>
+
+          <div class="checks">
+            <div class="check">
+              <div class="check-dot">✓</div>
+              <div>Personnel formé à la méthode</div>
+            </div>
+
+            <div class="check">
+              <div class="check-dot">✓</div>
+              <div>Protocole professionnel structuré</div>
+            </div>
+
+            <div class="check">
+              <div class="check-dot">✓</div>
+              <div>Intervention adaptée aux enfants et aux adultes</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="training-image">
+          <img src="img3.png" alt="Formation et matériel professionnel" />
+        </div>
+
+      </div>
+    </section>
+
+    <section id="precautions">
+      <div class="container">
+        <div class="care-box">
+          <h2>Une attention particulière au cuir chevelu</h2>
+          <p>
+            Chaque cuir chevelu est différent. Avant toute intervention,
+            une attention particulière est portée aux sensibilités,
+            irritations éventuelles et réactions connues.
+          </p>
+
+          <ul>
+            <li>Signaler toute allergie ou réaction connue avant l'intervention.</li>
+            <li>Une attention particulière est portée aux enfants et aux cuirs chevelus sensibles.</li>
+            <li>Éviter l'application de produits sur un cuir chevelu lésé ou fortement irrité.</li>
+            <li>En cas de rougeur importante, plaie, infection ou réaction persistante, demander un avis médical.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="location" id="adresse">
+      <div class="container">
+        <div class="section-head">
+          <span>Adresse</span>
+          <h2>Nous retrouver en Tunisie</h2>
+          <p>
+            Vous pouvez nous contacter pour une intervention à domicile
+            ou pour obtenir plus d’informations sur notre méthode.
+          </p>
+        </div>
+
+        <div class="location-grid">
+          <div class="location-card">
+            <h3>BioStopPoux Tunisie</h3>
+            <p>Centre de prévention, traitement et élimination des poux.</p>
+            <div class="address-box">
+              <strong>Adresse :</strong><br />
+              Immeuble Abessi 2e étage<br />
+              Rue 14 Janvier (Douleb)<br />
+              1200 Kasserine - Tunisie
+            </div>
+          </div>
+
+          <div class="location-card">
+            <h3>Informations pratiques</h3>
+            <p>Intervention à domicile en Tunisie</p>
+            <p>Accompagnement professionnel et rassurant</p>
+            <p>Approche mécanique et méthode structurée</p>
+            <p>Conseils destinés à toute la famille</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="contact">
+      <div class="container">
+        <div class="cta-inner">
+          <h2>Besoin d'une intervention ?</h2>
+          <p>
+            BioStopPoux Tunisie vous accompagne avec une méthode professionnelle,
+            une intervention à domicile et un protocole rassurant pour toute la famille.
+          </p>
+
+          <a href="tel:+21600000000" class="btn btn-primary">Prendre rendez-vous</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <a href="#" class="footer-logo">
+        <img src="logo.png" alt="BioStopPoux Tunisie" />
+      </a>
+
+      <div class="footer-text">
+        <strong>BioStopPoux Tunisie</strong>
+        Immeuble Abessi 2e étage, rue 14 janvier (Douleb) - 1200 Kasserine - Tunisie
+      </div>
+
+      <div class="footer-text">
+        <strong>Intervention à domicile</strong>
+        Centre de prévention et d'élimination des poux
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
