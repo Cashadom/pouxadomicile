@@ -25,1191 +25,333 @@
       --white: #ffffff;
       --text: #2c2c2c;
       --text-soft: #6b6b6b;
-      --border: #ededed;
-
-      --shadow-sm: 0 6px 18px rgba(0, 0, 0, 0.05);
-      --shadow: 0 18px 50px rgba(0, 0, 0, 0.08);
-
-      --radius: 22px;
+      --border: #e5e5e5;
     }
 
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
+      box-sizing: border-box;
     }
 
     body {
-      font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
-      background: var(--white);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
       color: var(--text);
-      line-height: 1.65;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
+      background: var(--white);
+      line-height: 1.6;
     }
 
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .container {
-      width: min(1120px, 92%);
-      margin: 0 auto;
-    }
-
-    /* ---------- HEADER ---------- */
-
+    /* ===== Header ===== */
     header {
+      background: var(--white);
+      border-bottom: 3px solid var(--red);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       position: sticky;
       top: 0;
-      z-index: 1000;
-      background: rgba(13, 13, 13, 0.92);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-    }
-
-    .nav {
-      min-height: 78px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
     }
 
     .logo {
-      display: flex;
-      align-items: center;
-      flex-shrink: 0;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--red);
+      letter-spacing: -0.5px;
     }
 
-    .logo img {
-      height: 54px;
-      width: auto;
-      object-fit: contain;
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 28px;
-      color: rgba(255, 255, 255, 0.82);
-      font-size: 14px;
-      font-weight: 500;
-      letter-spacing: 0.1px;
+    .logo span {
+      color: var(--ink);
     }
 
     nav a {
-      transition: color 0.25s ease;
-      position: relative;
-    }
-
-    nav a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -4px;
-      width: 0;
-      height: 1px;
-      background: var(--yellow);
-      transition: width 0.25s ease;
+      color: var(--text);
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-weight: 500;
+      transition: color 0.2s;
     }
 
     nav a:hover {
-      color: #fff;
-    }
-
-    nav a:hover::after {
-      width: 100%;
-    }
-
-    .nav-cta {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 42px;
-      padding: 0 18px;
-      background: var(--red);
-      color: #fff;
-      border-radius: 999px;
-      font-weight: 600;
-      font-size: 13.5px;
-      letter-spacing: 0.2px;
-      transition: 0.25s ease;
-      white-space: nowrap;
-    }
-
-    .nav-cta:hover {
-      background: var(--red-dark);
-      transform: translateY(-1px);
-    }
-
-    /* ---------- HERO ---------- */
-
-    .hero {
-      padding: 82px 0 76px;
-      background:
-        radial-gradient(circle at 8% 20%, rgba(217, 4, 82, 0.06), transparent 32%),
-        radial-gradient(circle at 96% 10%, rgba(239, 233, 42, 0.12), transparent 26%),
-        linear-gradient(180deg, #fff9fb 0%, #ffffff 60%);
-      overflow: hidden;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.02fr 0.98fr;
-      gap: 64px;
-      align-items: center;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: #fff;
-      color: var(--ink);
-      border: 1px solid rgba(0, 0, 0, 0.06);
-      padding: 7px 14px;
-      border-radius: 999px;
-      font-size: 12.5px;
-      font-weight: 600;
-      letter-spacing: 0.2px;
-      margin-bottom: 24px;
-      box-shadow: var(--shadow-sm);
-    }
-
-    h1 {
-      font-size: clamp(40px, 5.6vw, 64px);
-      line-height: 1.04;
-      letter-spacing: -1.8px;
-      font-weight: 700;
-      margin-bottom: 24px;
-      color: var(--ink);
-    }
-
-    h1 .accent {
       color: var(--red);
     }
 
-    h1 .accent-light {
+    /* ===== Hero ===== */
+    .hero {
+      background: linear-gradient(135deg, var(--red-soft) 0%, var(--yellow-soft) 100%);
+      padding: 5rem 2rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 800;
       color: var(--ink);
+      margin-bottom: 1rem;
+      line-height: 1.15;
     }
 
-    .hero-text {
-      font-size: 17.5px;
+    .hero h1 span {
+      color: var(--red);
+    }
+
+    .hero p {
+      font-size: 1.15rem;
       color: var(--text-soft);
-      max-width: 560px;
-      margin-bottom: 30px;
-      line-height: 1.7;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-bottom: 30px;
+      max-width: 640px;
+      margin: 0 auto 2rem;
     }
 
     .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 48px;
-      padding: 0 24px;
-      border-radius: 999px;
-      font-size: 14.5px;
-      font-weight: 600;
-      letter-spacing: 0.2px;
-      transition: 0.25s ease;
-    }
-
-    .btn-primary {
-      background: var(--red);
-      color: #fff;
-    }
-
-    .btn-primary:hover {
-      background: var(--red-dark);
-      transform: translateY(-1px);
-    }
-
-    .btn-secondary {
-      background: transparent;
-      color: var(--ink);
-      border: 1px solid rgba(0, 0, 0, 0.14);
-    }
-
-    .btn-secondary:hover {
-      border-color: var(--red);
-      color: var(--red);
-    }
-
-    .trust-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .trust-item {
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      padding: 7px 13px;
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--text);
-      display: flex;
-      align-items: center;
-      gap: 7px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-    }
-
-    .trust-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-    }
-
-    .dot-red { background: var(--red); }
-    .dot-yellow { background: #d4c800; }
-    .dot-black { background: var(--ink); }
-
-    .hero-picture {
-      position: relative;
-    }
-
-    .hero-picture-main {
-      border-radius: 26px;
-      overflow: hidden;
-      min-height: 480px;
-      background: #f7f7f7;
-      box-shadow: var(--shadow);
-      border: 1px solid rgba(0, 0, 0, 0.05);
-    }
-
-    .hero-picture-main img {
-      width: 100%;
-      height: 480px;
-      object-fit: cover;
-    }
-
-    .certified-card {
-      position: absolute;
-      left: -26px;
-      bottom: 26px;
-      width: 240px;
-      background: #fff;
-      border-radius: 20px;
-      padding: 20px;
-      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
-      border: 1px solid rgba(0, 0, 0, 0.05);
-    }
-
-    .certified-icon {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      background: var(--yellow-soft);
-      color: var(--red);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 20px;
-      font-weight: 800;
-      margin-bottom: 12px;
-    }
-
-    .certified-card strong {
-      display: block;
-      font-size: 16.5px;
-      margin-bottom: 6px;
-      color: var(--ink);
-      letter-spacing: -0.2px;
-    }
-
-    .certified-card p {
-      font-size: 12.5px;
-      color: var(--text-soft);
-      line-height: 1.55;
-    }
-
-    /* ---------- BANDEAU ---------- */
-
-    .certification {
-      padding: 18px 0;
-      background: var(--ink);
-      color: #fff;
-    }
-
-    .certification-inner {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-      align-items: center;
-    }
-
-    .cert-feature {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 13.5px;
-      font-weight: 500;
-      letter-spacing: 0.1px;
-      color: rgba(255, 255, 255, 0.9);
-    }
-
-    .cert-feature-icon {
-      width: 34px;
-      height: 34px;
-      min-width: 34px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--yellow);
-      font-size: 14px;
-      font-weight: 700;
-    }
-
-    section {
-      padding: 86px 0;
-    }
-
-    .section-head {
-      max-width: 720px;
-      margin-bottom: 46px;
-    }
-
-    .section-head span {
       display: inline-block;
-      text-transform: uppercase;
-      letter-spacing: 1.4px;
-      font-size: 12px;
+      background: var(--red);
+      color: var(--white);
+      padding: 0.9rem 2.2rem;
+      border-radius: 50px;
+      text-decoration: none;
       font-weight: 700;
-      color: var(--red);
-      margin-bottom: 12px;
+      font-size: 1.05rem;
+      transition: background 0.2s, transform 0.15s;
+      border: none;
+      cursor: pointer;
     }
 
-    .section-head h2 {
-      font-size: clamp(30px, 3.8vw, 44px);
-      line-height: 1.1;
-      letter-spacing: -1.2px;
-      margin-bottom: 14px;
+    .btn:hover {
+      background: var(--red-dark);
+      transform: translateY(-2px);
+    }
+
+    /* ===== Services ===== */
+    .services {
+      padding: 4rem 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .services h2 {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 800;
       color: var(--ink);
-      font-weight: 700;
+      margin-bottom: 0.5rem;
     }
 
-    .section-head p {
-      font-size: 16.5px;
+    .services > p {
+      text-align: center;
       color: var(--text-soft);
-      line-height: 1.7;
+      margin-bottom: 3rem;
     }
 
-    /* ---------- CARTES ---------- */
-
-    .cards {
+    .grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
     }
 
     .card {
-      background: #fff;
+      background: var(--white);
       border: 1px solid var(--border);
-      border-top: 4px solid var(--red);
-      border-radius: 20px;
-      padding: 28px;
-      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.035);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      border-radius: 16px;
+      padding: 2rem;
+      transition: transform 0.2s, box-shadow 0.2s;
     }
 
     .card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.06);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(217, 4, 82, 0.1);
     }
 
-    .card:nth-child(2) {
-      border-top-color: var(--ink);
-    }
-
-    .card:nth-child(3) {
-      border-top-color: #d4c800;
-    }
-
-    .card-number {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      font-size: 15px;
-      margin-bottom: 18px;
-      background: var(--red-soft);
-      color: var(--red);
-    }
-
-    .card:nth-child(2) .card-number {
-      background: #f4f4f4;
-      color: var(--ink);
-    }
-
-    .card:nth-child(3) .card-number {
-      background: var(--yellow-soft);
-      color: #8a7a00;
+    .card .icon {
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
     }
 
     .card h3 {
-      font-size: 19px;
-      margin-bottom: 10px;
-      color: var(--ink);
-      letter-spacing: -0.3px;
+      font-size: 1.2rem;
       font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 0.5rem;
     }
 
     .card p {
       color: var(--text-soft);
-      font-size: 14.5px;
-      line-height: 1.65;
+      font-size: 0.95rem;
     }
 
-    /* ---------- PHOTO ---------- */
-
-    .photo-section {
-      background: #fcfcfc;
-    }
-
-    .photo-grid {
-      display: grid;
-      grid-template-columns: 0.95fr 1.05fr;
-      gap: 66px;
-      align-items: center;
-    }
-
-    .photo-box {
-      overflow: hidden;
-      border-radius: 24px;
-      box-shadow: var(--shadow);
-      background: #f6f6f6;
-      border: 1px solid rgba(0, 0, 0, 0.05);
-      min-height: 440px;
-    }
-
-    .photo-box img {
-      width: 100%;
-      height: 440px;
-      object-fit: cover;
-    }
-
-    .content-label {
-      display: inline-block;
-      text-transform: uppercase;
-      letter-spacing: 1.4px;
-      font-size: 11.5px;
-      font-weight: 700;
-      color: var(--red);
-      margin-bottom: 12px;
-    }
-
-    .photo-content h2 {
-      font-size: clamp(30px, 3.8vw, 42px);
-      line-height: 1.1;
-      letter-spacing: -1.2px;
-      margin-bottom: 18px;
-      color: var(--ink);
-      font-weight: 700;
-    }
-
-    .photo-content > p {
-      color: var(--text-soft);
-      font-size: 16.5px;
-      margin-bottom: 28px;
-      line-height: 1.7;
-    }
-
-    .checks {
-      display: grid;
-      gap: 14px;
-    }
-
-    .check {
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-    }
-
-    .check-dot {
-      width: 24px;
-      height: 24px;
-      min-width: 24px;
-      border-radius: 50%;
-      background: var(--yellow-soft);
-      color: var(--red);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 800;
-      font-size: 12px;
-      margin-top: 1px;
-    }
-
-    .check div:last-child {
-      font-size: 15px;
-      color: var(--text);
-      line-height: 1.6;
-    }
-
-    /* ---------- FORMATION ---------- */
-
-    .training {
-      background: linear-gradient(135deg, #fff8fc 0%, #fffceb 100%);
-    }
-
-    .training-inner {
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 62px;
-      align-items: center;
-    }
-
-    .training-content {
-      background: rgba(255, 255, 255, 0.92);
-      border-radius: 24px;
-      padding: 42px;
-      border: 1px solid rgba(0, 0, 0, 0.05);
-      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.035);
-      backdrop-filter: blur(6px);
-    }
-
-    .training-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--yellow-soft);
-      color: var(--ink);
-      padding: 7px 14px;
-      border-radius: 999px;
-      font-size: 12.5px;
-      font-weight: 700;
-      margin-bottom: 20px;
-    }
-
-    .training-content h2 {
-      font-size: clamp(29px, 3.8vw, 42px);
-      line-height: 1.1;
-      letter-spacing: -1.2px;
-      margin-bottom: 18px;
-      color: var(--ink);
-      font-weight: 700;
-    }
-
-    .training-content p {
-      color: var(--text-soft);
-      margin-bottom: 18px;
-      font-size: 15.5px;
-      line-height: 1.7;
-    }
-
-    .training-image {
-      overflow: hidden;
-      border-radius: 24px;
-      box-shadow: var(--shadow);
-      background: #fff;
-      border: 1px solid rgba(0, 0, 0, 0.05);
-    }
-
-    .training-image img {
-      width: 100%;
-      height: 460px;
-      object-fit: cover;
-    }
-
-    /* ---------- PRÉCAUTIONS ---------- */
-
-    .care-box {
-      background: linear-gradient(135deg, #fff3f8 0%, #fffdf2 100%);
-      border-radius: 24px;
-      padding: 44px;
-      max-width: 920px;
-      border: 1px solid rgba(0, 0, 0, 0.04);
-    }
-
-    .care-box h2 {
-      font-size: clamp(29px, 3.8vw, 40px);
-      line-height: 1.15;
-      margin-bottom: 16px;
-      color: var(--ink);
-      letter-spacing: -1px;
-      font-weight: 700;
-    }
-
-    .care-box p {
-      color: var(--text-soft);
-      margin-bottom: 18px;
-      font-size: 16px;
-      line-height: 1.7;
-    }
-
-    .care-box ul {
-      padding-left: 20px;
-      color: var(--text-soft);
-    }
-
-    .care-box li {
-      margin: 9px 0;
-      font-size: 15.5px;
-      line-height: 1.65;
-    }
-
-    /* ---------- CONTACT ---------- */
-
-    .location {
-      background: #fafafa;
-    }
-
-    .location-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 26px;
-    }
-
-    .location-card {
-      background: #fff;
-      border-radius: 20px;
-      padding: 30px;
-      border: 1px solid var(--border);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.035);
-    }
-
-    .location-card h3 {
-      font-size: 22px;
-      margin-bottom: 12px;
-      color: var(--ink);
-      letter-spacing: -0.4px;
-      font-weight: 700;
-    }
-
-    .location-card p {
-      color: var(--text-soft);
-      margin-bottom: 8px;
-      font-size: 15.5px;
-      line-height: 1.65;
-    }
-
-    .address-box {
+    /* ===== Contact ===== */
+    .contact {
       background: var(--ink);
-      color: #fff;
-      border-radius: 16px;
-      padding: 20px;
-      margin-top: 14px;
-      font-size: 14.5px;
-      line-height: 1.7;
-    }
-
-    .address-box strong {
-      color: var(--yellow);
-      font-weight: 600;
-    }
-
-    /* ---------- CTA ---------- */
-
-    .cta {
-      padding-top: 14px;
+      color: var(--white);
+      padding: 4rem 2rem;
       text-align: center;
     }
 
-    .cta-inner {
-      background: var(--ink);
-      color: #fff;
-      border-radius: 26px;
-      padding: 62px 30px;
-      position: relative;
-      overflow: hidden;
+    .contact h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
     }
 
-    .cta-inner::before,
-    .cta-inner::after {
-      content: "";
-      position: absolute;
-      width: 240px;
-      height: 240px;
-      border-radius: 50%;
-      opacity: 0.07;
+    .contact > p {
+      color: #b0b0b0;
+      margin-bottom: 2rem;
     }
 
-    .cta-inner::before {
-      background: var(--red);
-      left: -80px;
-      top: -100px;
-    }
-
-    .cta-inner::after {
-      background: var(--yellow);
-      right: -90px;
-      bottom: -120px;
-    }
-
-    .cta h2 {
-      position: relative;
-      z-index: 2;
-      font-size: clamp(30px, 3.8vw, 42px);
-      margin-bottom: 14px;
-      letter-spacing: -1px;
-      font-weight: 700;
-    }
-
-    .cta p {
-      position: relative;
-      z-index: 2;
-      max-width: 640px;
-      margin: 0 auto 28px;
-      color: rgba(255, 255, 255, 0.78);
-      font-size: 16px;
-      line-height: 1.7;
-    }
-
-    .cta .btn {
-      position: relative;
-      z-index: 2;
-    }
-
-    /* ---------- FOOTER ---------- */
-
-    footer {
-      margin-top: 80px;
-      background: var(--ink);
-      color: rgba(255, 255, 255, 0.72);
-      padding: 34px 0;
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
-    }
-
-    .footer-inner {
+    .contact-info {
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: space-between;
-      gap: 25px;
-      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 2rem;
     }
 
-    .footer-logo img {
-      height: 44px;
-      width: auto;
+    .contact-info a {
+      color: var(--yellow);
+      text-decoration: none;
+      font-size: 1.25rem;
+      font-weight: 700;
+      transition: color 0.2s;
     }
 
-    .footer-text {
-      font-size: 13.5px;
-      line-height: 1.65;
-      max-width: 340px;
+    .contact-info a:hover {
+      color: var(--white);
     }
 
-    .footer-text strong {
-      color: #fff;
-      display: block;
-      margin-bottom: 4px;
-      font-weight: 600;
-      letter-spacing: 0.1px;
+    .phone-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: var(--red);
+      color: var(--white) !important;
+      padding: 0.9rem 2rem;
+      border-radius: 50px;
+      font-size: 1.35rem !important;
+      font-weight: 800 !important;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
     }
 
-    /* ---------- MOBILE ---------- */
-
-    @media (max-width: 950px) {
-      nav {
-        display: none;
-      }
-
-      .hero-grid,
-      .photo-grid,
-      .training-inner,
-      .location-grid {
-        grid-template-columns: 1fr;
-        gap: 44px;
-      }
-
-      .cards,
-      .certification-inner {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .hero-picture {
-        margin-top: 10px;
-      }
-
-      .certified-card {
-        left: 14px;
-        bottom: 14px;
-      }
+    .phone-link:hover {
+      background: var(--red-dark);
+      transform: translateY(-2px);
+      color: var(--white) !important;
     }
 
-    @media (max-width: 700px) {
-      .cards,
-      .certification-inner {
-        grid-template-columns: 1fr;
-      }
+    .contact .btn-yellow {
+      background: var(--yellow);
+      color: var(--ink);
+    }
 
-      .nav {
-        min-height: 68px;
-      }
+    .contact .btn-yellow:hover {
+      background: #d9d325;
+    }
 
-      .logo img {
-        height: 46px;
-      }
+    /* ===== Footer ===== */
+    footer {
+      background: var(--ink-2);
+      color: #888;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.875rem;
+    }
 
-      .nav-cta {
-        font-size: 12px;
-        padding: 0 14px;
-        min-height: 38px;
-      }
-
-      h1 {
-        font-size: 40px;
-        letter-spacing: -1.4px;
-      }
-
-      .hero-picture-main,
-      .hero-picture-main img {
-        min-height: 400px;
-        height: 400px;
-      }
-
-      .photo-box,
-      .photo-box img {
-        min-height: 340px;
-        height: 340px;
-      }
-
-      .training-image img {
-        height: 360px;
-      }
-
-      .care-box,
-      .training-content,
-      .location-card {
-        padding: 28px;
-      }
-
-      section {
-        padding: 68px 0;
-      }
-
-      .footer-inner {
+    @media (max-width: 640px) {
+      header {
         flex-direction: column;
-        align-items: flex-start;
-        gap: 18px;
+        gap: 0.75rem;
+        padding: 0.75rem 1rem;
+      }
+
+      nav a {
+        margin: 0 0.6rem;
+        font-size: 0.9rem;
+      }
+
+      .hero {
+        padding: 3rem 1.25rem;
+      }
+
+      .phone-link {
+        font-size: 1.15rem !important;
+        padding: 0.8rem 1.5rem;
       }
     }
   </style>
 </head>
 <body>
 
+  <!-- ===== HEADER ===== -->
   <header>
-    <div class="container nav">
-      <a href="#" class="logo">
-        <img src="logo.png" alt="BioStopPoux Tunisie" />
-      </a>
-
-      <nav>
-        <a href="#methode">La méthode</a>
-        <a href="#traitement">Le traitement</a>
-        <a href="#formation">Notre savoir-faire</a>
-        <a href="#precautions">Précautions</a>
-        <a href="#adresse">Adresse</a>
-      </nav>
-
-      <a href="#contact" class="nav-cta">Prendre rendez-vous</a>
-    </div>
+    <div class="logo">BioStop<span>Poux</span></div>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
-  <main>
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <h1>Dites <span>stop aux poux</span><br />à domicile, en Tunisie</h1>
+    <p>
+      Centre de prévention, de traitement et d'élimination des poux.
+      Intervention rapide, discrète et efficace chez vous.
+    </p>
+    <a href="#contact" class="btn">Prendre rendez-vous</a>
+  </section>
 
-    <section class="hero">
-      <div class="container hero-grid">
+  <!-- ===== SERVICES ===== -->
+  <section class="services" id="services">
+    <h2>Nos services</h2>
+    <p>Des solutions complètes pour toute la famille</p>
 
-        <div>
-          <div class="eyebrow">Centre de prévention et traitement des poux</div>
-
-          <h1>
-            Dites stop aux <span class="accent">poux</span>,
-            simplement et <span class="accent-light">efficacement</span>.
-          </h1>
-
-          <p class="hero-text">
-            BioStopPoux Tunisie vous accompagne avec une méthode professionnelle
-            développée en France depuis 2017, combinant aspiration mécanique,
-            contrôle minutieux et intervention adaptée à toute la famille.
-          </p>
-
-          <div class="hero-buttons">
-            <a href="#contact" class="btn btn-primary">Prendre rendez-vous</a>
-            <a href="#methode" class="btn btn-secondary">Découvrir la méthode</a>
-          </div>
-
-          <div class="trust-row">
-            <div class="trust-item">
-              <span class="trust-dot dot-red"></span>
-              Formation certifiée
-            </div>
-
-            <div class="trust-item">
-              <span class="trust-dot dot-yellow"></span>
-              Méthode naturelle
-            </div>
-
-            <div class="trust-item">
-              <span class="trust-dot dot-black"></span>
-              Intervention à domicile
-            </div>
-          </div>
-        </div>
-
-        <div class="hero-picture">
-          <div class="hero-picture-main">
-            <img src="img1.png" alt="Traitement professionnel des poux à domicile en Tunisie" />
-          </div>
-
-          <div class="certified-card">
-            <div class="certified-icon">✓</div>
-            <strong>Formation certifiée</strong>
-            <p>
-              Une méthode professionnelle développée par Poux à Domicile
-              en France depuis 2017.
-            </p>
-          </div>
-        </div>
-
+    <div class="grid">
+      <div class="card">
+        <div class="icon">🔍</div>
+        <h3>Détection & diagnostic</h3>
+        <p>Inspection minutieuse du cuir chevelu pour identifier poux et lentes.</p>
       </div>
-    </section>
 
-    <div class="certification">
-      <div class="container certification-inner">
-        <div class="cert-feature">
-          <div class="cert-feature-icon">✓</div>
-          Formation professionnelle
-        </div>
+      <div class="card">
+        <div class="icon">💆</div>
+        <h3>Traitement à domicile</h3>
+        <p>Soins professionnels réalisés chez vous, sans déplacement stressant.</p>
+      </div>
 
-        <div class="cert-feature">
-          <div class="cert-feature-icon">2017</div>
-          Méthode développée en France
-        </div>
+      <div class="card">
+        <div class="icon">🛡️</div>
+        <h3>Prévention & suivi</h3>
+        <p>Conseils personnalisés et suivi pour éviter toute réinfestation.</p>
+      </div>
 
-        <div class="cert-feature">
-          <div class="cert-feature-icon">♧</div>
-          Traitement éco-naturel
-        </div>
-
-        <div class="cert-feature">
-          <div class="cert-feature-icon">⌂</div>
-          À domicile en Tunisie
-        </div>
+      <div class="card">
+        <div class="icon">🧹</div>
+        <h3>Désinfection environnement</h3>
+        <p>Traitement complet des textiles, literies et espaces de vie.</p>
       </div>
     </div>
+  </section>
 
-    <section id="methode">
-      <div class="container">
-        <div class="section-head">
-          <span>Notre méthode</span>
-          <h2>Une méthode claire, structurée et rassurante</h2>
-          <p>
-            Notre protocole associe diagnostic, aspiration mécanique,
-            contrôle des lentes et intervention adaptée afin de traiter
-            la chevelure de manière méthodique.
-          </p>
-        </div>
+  <!-- ===== CONTACT ===== -->
+  <section class="contact" id="contact">
+    <h2>Contactez-nous</h2>
+    <p>Disponibles 7j/7 pour intervenir rapidement à votre domicile.</p>
 
-        <div class="cards">
-          <div class="card">
-            <div class="card-number">1</div>
-            <h3>Diagnostic</h3>
-            <p>
-              Vérification minutieuse du cuir chevelu et des cheveux
-              afin d'identifier la présence de poux et de lentes.
-            </p>
-          </div>
+    <div class="contact-info">
+      <!-- 📞 Numéro de téléphone cliquable (Tunisie) -->
+      <a href="tel:+21623950511" class="phone-link">
+        📞 23 950 511
+      </a>
+    </div>
 
-          <div class="card">
-            <div class="card-number">2</div>
-            <h3>Aspiration des poux</h3>
-            <p>
-              Utilisation d'un aspirateur spécialement adapté
-              permettant une action mécanique ciblée.
-            </p>
-          </div>
+    <a href="tel:+21623950511" class="btn btn-yellow">Appeler maintenant</a>
+  </section>
 
-          <div class="card">
-            <div class="card-number">3</div>
-            <h3>Contrôle mèche par mèche</h3>
-            <p>
-              Contrôle rigoureux de la chevelure et conseils pratiques
-              pour réduire le risque de récidive.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    &copy; 2026 BioStopPoux Tunisie — Tous droits réservés.
+  </footer>
 
-    <section class="photo-section" id="traitement">
-      <div class="container photo-grid">
-
-        <div class="photo-box">
-          <img src="img2.png" alt="Schéma du traitement des poux" />
-        </div>
-
-        <div class="photo-content">
-          <span class="content-label">Le traitement</span>
-          <h2>Une approche mécanique avant tout</h2>
-          <p>
-            Notre priorité est de traiter les cheveux avec une méthode précise,
-            en privilégiant l’aspiration mécanique et une approche respectueuse
-            du cuir chevelu.
-          </p>
-
-          <div class="checks">
-            <div class="check">
-              <div class="check-dot">✓</div>
-              <div>Aspiration mécanique des poux</div>
-            </div>
-
-            <div class="check">
-              <div class="check-dot">✓</div>
-              <div>Inspection précise du cuir chevelu</div>
-            </div>
-
-            <div class="check">
-              <div class="check-dot">✓</div>
-              <div>Contrôle et retrait minutieux des lentes</div>
-            </div>
-
-            <div class="check">
-              <div class="check-dot">✓</div>
-              <div>Approche douce et éco-naturelle</div>
-            </div>
-
-            <div class="check">
-              <div class="check-dot">✓</div>
-              <div>Conseils pour éviter une nouvelle infestation</div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <section class="training" id="formation">
-      <div class="container training-inner">
-
-        <div class="training-content">
-          <div class="training-badge">Formation certifiée</div>
-
-          <h2>Un savoir-faire professionnel transmis depuis la France</h2>
-
-          <p>
-            Notre protocole repose sur une méthode développée en France
-            depuis 2017, adaptée à une intervention à domicile rassurante
-            et professionnelle.
-          </p>
-
-          <p>
-            L'intervention suit différentes étapes : observation du cuir chevelu,
-            aspiration, traitement des cheveux, contrôle des lentes et conseils
-            pratiques destinés à toute la famille.
-          </p>
-
-          <div class="checks">
-            <div class="check">
-              <div class="check-dot">✓</div>
-              <div>Personnel formé à la méthode</div>
-            </div>
-
-            <div class="check">
-              <div class="check-dot">✓</div>
-              <div>Protocole professionnel structuré</div>
-            </div>
-
-            <div class="check">
-              <div class="check-dot">✓</div>
-              <div>Intervention adaptée aux enfants et aux adultes</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="training-image">
-          <img src="img3.png" alt="Formation et matériel professionnel" />
-        </div>
-
-      </div>
-    </section>
-
-    <section id="precautions">
-      <div class="container">
-        <div class="care-box">
-          <h2>Une attention particulière au cuir chevelu</h2>
-          <p>
-            Chaque cuir chevelu est différent. Avant toute intervention,
-            une attention particulière est portée aux sensibilités,
-            irritations éventuelles et réactions connues.
-          </p>
-
-          <ul>
-            <li>Signaler toute allergie ou réaction connue avant l'intervention.</li>
-            <li>Une attention particulière est portée aux enfants et aux cuirs chevelus sensibles.</li>
-            <li>Éviter l'application de produits sur un cuir chevelu lésé ou fortement irrité.</li>
-            <li>En cas de rougeur importante, plaie, infection ou réaction persistante, demander un avis médical.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="location" id="adresse">
-      <div class="container">
-        <div class="section-head">
-          <span>Adresse</span>
-          <h2>Nous retrouver en Tunisie</h2>
-          <p>
-            Vous pouvez nous contacter pour une intervention à domicile
-            ou pour obtenir plus d’informations sur notre méthode.
-          </p>
-        </div>
-
-        <div class="location-grid">
-          <div class="location-card">
-            <h3>BioStopPoux Tunisie</h3>
-            <p>Centre de prévention, traitement et élimination des poux.</p>
-            <div class="address-box">
-              <strong>Adresse :</strong><br />
-              Immeuble Abessi 2e étage<br />
-              Rue 14 Janvier (Douleb)<br />
-              1200 Kasserine — Tunisie
-            </div>
-          </div>
-
-          <div class="location-card">
-            <h3>Informations pratiques</h3>
-            <p>Intervention à domicile en Tunisie</p>
-            <p>Accompagnement professionnel et rassurant</p>
-            <p>Approche mécanique et méthode structurée</p>
-            <p>Conseils destinés à toute la famille</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="cta" id="contact">
-      <div class="container">
-        <div class="cta-inner">
-          <h2>Besoin d'une intervention ?</h2>
-          <p>
-            BioStopPoux Tunisie vous accompagne avec une méthode professionnelle,
-            une intervention à domicile et un protocole rassurant pour toute la famille.
-          </p
+</body>
+</html>
